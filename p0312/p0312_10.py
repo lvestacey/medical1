@@ -1,20 +1,34 @@
 import random
+# 카드 종류 : SPADE, DIAMOND, HEART, CLOVER 4종류
+# 카드 숫자 : A,1,2,4,5,6,7,8,9,10,J,Q,K   13장
+# 카드 총 수 : 52장
+import random
 
 # 카드 종류 : SPADE, DIAMOND, HEART, CLOVER 4종류
-# 카드 숫자 : A,2,3,4,5,6,7,8,9,10,J,Q,K   13장
+# 카드 숫자 : A,1,2,4,5,6,7,8,9,10,J,Q,K   13장
 # 카드 총 수 : 52장
 
-def card_creat():
-    pass
+def card_create():
+    suits = ['SPADE', 'DIAMOND', 'HEART', 'CLOVER']
+    ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+    cards = [(rank, suit) for suit in suits for rank in ranks]
+    return cards
 
-def card_shuffle():
-    pass
+def card_shuffle(cards):
+    random.shuffle(cards)
+    return cards
 
-def card_share():
-    pass
+# def card_share(cards):
+#     players =
+    
+# for _ in range(5):
+#     player_hand = [cards.pop() for _ in range(5)]
+#     players.append(player_hand)
+#     return players
 
-def card_print():
-    pass
+def card_print(players):
+    for i, player in enumerate(players):
+        print(f"Player {i+1}: {player}")
 
 while True:
     print("[ 카드 프로그램 ]")
@@ -25,15 +39,20 @@ while True:
     print("0. 종료")
     print("-"*40)
     choice = int(input("원하는 번호를 입력하세요.>> "))
-
     if choice == 1:
-        card_creat()
+        cards = card_create()
+        print("카드 생성 완료")
     elif choice == 2:
-        card_shuffle()     
+        cards = card_shuffle(cards)
+        print("카드 섞기 완료")
     elif choice == 3:
-        card_share()     
+        players = card_share(cards)
+        print("카드 5장 나눠주기 완료")
     elif choice == 4:
-        card_print() 
-    else:
+        card_print(players)
+    elif choice == 0:
         print("프로그램을 종료합니다.")
-        break       
+        break
+    else:
+        print("잘못된 입력입니다. 다시 입력해주세요.")
+
