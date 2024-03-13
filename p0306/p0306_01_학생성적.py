@@ -146,7 +146,7 @@ while True:
     # 5. 등수처리
     elif choice == 5:
         # 등수처리는 합계를 가지고 처리함.
-        for i,s_dic in enumerate(students):
+        for s_dic in students: #enumerate수정함
             rank_cnt = 1 #등수처리변수
             for i_dic in students:
                 if s_dic["total"]<i_dic["total"]: #두수를 비교
