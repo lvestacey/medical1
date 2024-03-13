@@ -2,35 +2,18 @@ import random
 # 카드 종류 : SPADE, DIAMOND, HEART, CLOVER 4종류
 # 카드 숫자 : A,1,2,4,5,6,7,8,9,10,J,Q,K   13장
 # 카드 총 수 : 52장
-import random
 
 # 카드 종류 : SPADE, DIAMOND, HEART, CLOVER 4종류
 # 카드 숫자 : A,1,2,4,5,6,7,8,9,10,J,Q,K   13장
 # 카드 총 수 : 52장
 
 def card_create():
-    suits = ['SPADE', 'DIAMOND', 'HEART', 'CLOVER']
-    ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-    cards = [(rank, suit) for suit in suits for rank in ranks]
-    return cards
+    
 
 def card_shuffle(cards):
-    random.shuffle(cards)
-    return cards
-
-# def card_share(cards):
-#     players =
     
-# for _ in range(5):
-#     player_hand = [cards.pop() for _ in range(5)]
-#     players.append(player_hand)
-#     return players
 
-def card_print(players):
-    for i, player in enumerate(players):
-        print(f"Player {i+1}: {player}")
 
-while True:
     print("[ 카드 프로그램 ]")
     print("1. 카드생성")
     print("2. 카드섞기")
