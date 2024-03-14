@@ -1,3 +1,12 @@
+def stu_print():
+    print("[ 학생성적 프로그램 ]")
+    print("1. 학생성적입력")
+    print("2. 학생성적출력")
+    print("3. 학생성적검색")
+    print("4. 학생성적수정")
+    print("5. 학생성적삭제")
+
+
 # 성적점수부분 함수
 def score_update(choice,s_title,stu):
     print(f"[ {s_title[choice]}성적 수정 ]")
