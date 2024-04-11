@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title></title>
+    <style>
+        #n1{background: yellow;}
+
+    </style>
+
+        <script>
+        $(function(){
+            //button 클릭이 되면 input 색생을 yellow 변경 
+            //1. 선택자 지정 
+            $("#nbtn1").click(function(){ //click :함수 //콜백함수 
+                $(".n1").css("background-color", "yellow",);
+            });
+            $("#nbtn2").click(function(){
+                $(".n2").css("background-color", "blue","font-weight","700");
+            });
+            
+            $("#nbtn3").click(function(){
+                $(".n3").css("background-color", "green");
+            });
+        });
+</script>
+    
+</head>
+<body>
+    <input type="text" name="n1" class="n1" value="네이버" readonly>
+    <button id="nbtn1">체크</button>
+    <br>
+    <input type="text" name="n2" class="n2" value="다음" readonly>
+    <button id="nbtn2">체크</button>
+    <br>
+    <input type="text" name="n3" class="n3" value="구글" readonly>
+    <button id="nbtn3">체크</button>
+    <br>
+</body>
+</html>

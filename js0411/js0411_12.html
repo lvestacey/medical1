@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>선택자</title>
+    <style>
+        section{width: 12000px; margin: 50px auto;}
+        table{border-collapse: collapse; width: 1200px;}
+        table,th,td{border: 1px solid black; text-align: center;}
+        th{height: 45px; background: #efefef;}
+        td{height: 40px;}
+    </style>
+    <script>
+        $(function(){
+           
+            let id=['aaa','bbb','ccc','Sholom','Marja','Rebbecca','Dotti','Aleta','Langston','Byran'];
+            let pw=['1111','2222','3333','5462','7238','5127','6703','6602','3334','5543'];
+            let gender=['M','M','M','M','F','F','F','F','M','M'];
+            let tel=['640-176-1140','112-116-7358','827-134-1052','902-633-5447','259-566-8811','550-280-4598',
+                    '974-632-1467','498-680-5954','532-597-6922','458-696-4923'];
+            let email=['aepelett0@topsy.com','cchadwen1@arizona.edu','wpalser2@ca.gov',
+            'skimbling3@live.com','mboustred4@rambler.ru','rtunnock5@java.com',
+            'dtuohy6@phpbb.com','apendreigh7@123-reg.co.uk','lparfrey8@mediafire.com',
+            'brocks9@goo.gl'];
+            
+                        
+        
+          
+            let hdata="";
+            for(let i=0;i<10;i++){
+                hdata +="<tr id='"+id[i]+"'>";
+                hdata +="<td>"+pw[i]+"</td>";
+                hdata +="<td>"+gender[i]+"</td>";
+                hdata +=" <td>"+tel[i]+"</td>";
+                hdata +=" <td>"+email[i]+"</td>";
+                hdata +=" <td><button class='cBtn'>삭제</button></td></tr>";
+             
+
+            }
+
+            $("tbody").html(hdata);
+            $(".cBtn").click(function(){
+           
+                let del_id=$(".cBtn").parent().parent().attr("id");
+                if(confirm("정말 삭제하시겠습니까?"))
+                    console.log("id :"+del_id);
+                    $("#"+del_id).remove();
+
+            });
+            /*
+            $("tbody").html(hdata);
+            $(".cBtn").click(function(){
+               let del_id=$(".cBtn").parent().parent(); 
+               console.log("부모요소모음 :"+$(".cBtn").parent().parent().attr("id"));
+               if(confirm("삭제하시겠습니까?"))
+                    $(del_id.attr("id")).remove();
+           
+            });
+            */
+
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <h2>member</h2>
+    <section>
+    <table>
+        <colgroup>
+            <col width="15%">
+            <col width="25%">
+            <col width="10%">
+            <col width="25%">
+            <col width="10%">
+            <col width="10%">
+       </colgroup>
+       <thead>
+        <tr>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>성별</th>
+            <th>전화번호</th>
+            <th>이메일</th>
+            <th>삭제</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+    </table>
+    <button id="addBtn">게시문 추가</button>
+</section>
+</body>
+
+  
+</body>
+</html>
