@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title></title>
+    <title>Document</title>
     <style>
-        #n1{background: yellow; color: blue; font-weight: 700;}
-
+       .n1{background:yellow; color:blue;font-weight: 700;}
     </style>
-
-        <script>
+ 
+    <script>
+        // 1. css, 2.attr
         $(function(){
-           
-            $("#nbtn1").click(function(){ //click :함수 //콜백함수 
-                console.log$("name 속성값: "+$(".n1").attr("name"));
-                console.log$("name 속성값: "+$(".n1").attr("type"));
-                console.log$("name 속성값: "+$(".n1").attr("readonly"));
+           //1. 선택자 지정
+           $("#nbtn1").click(function(){
+              console.log("name 속성값 : "+ $(".n1").attr("name"));
+              console.log("type 속성값 : "+ $(".n1").attr("type"));
+              console.log("readonly 속성값 : "+ $(".n1").attr("readonly"));
+           });
 
-            });
-            $("#game").click(function(){
-                console.log("id 속성값: "+$("#game").attr("id"));
-                $("#game").attr("value","game2")
-                });
-            $("#golf").click(function(){
-                console.log("id 속성값: "+$("#golf").attr("id"));
-                });
+           //체크박스를 클릭하면 id값을 console출력
+           $("#game").click(function(){
+             console.log("id 속성값 : "+$("#game").attr("id"));
+             $("#game").attr("value","game2");
+           });
+           $("#golf").click(function(){
+             console.log("id 속성값 : "+$("#golf").attr("id"));
+           });
+           $("#book").click(function(){
+             console.log("id 속성값 : "+$("#book").attr("id"));
+           });
+          
 
-            $("#book").click(function(){
-                console.log("id 속성값: "+$("#book").attr("id"));
-                });
-
-    });
-</script>
-    
+        });
+    </script>
 </head>
 <body>
     <input type="checkbox" name="hobby" id="game" value="game">
@@ -43,6 +43,7 @@
     <input type="checkbox" name="hobby" id="book" value="book" checked>
     <label for="book">독서</label>
     <br><br>
+
     <input type="text" name="n1" class="n1" value="네이버" readonly>
     <button id="nbtn1">체크</button>
     <br>
