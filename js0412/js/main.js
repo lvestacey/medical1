@@ -112,7 +112,7 @@ $(function(){
 
 
     //table에 있는 삭제버튼 클릭
-    $(".delBtn").click(function(){
+    $(document).on("click",".delBtn",function(){
         console.log("현재 선택된 class id : "+$(this).parent().parent().attr("id"));
         if(confirm("정말 삭제하시겠습니까?")){
             $("#"+$(this).parent().parent().attr("id")).remove();
